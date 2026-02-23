@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
 
   nginx:
@@ -19,6 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: php
     working_dir: /var/www
+    user: "1000:1000"          # 👈 КЛЮЧЕВОЕ РЕШЕНИЕ
     volumes:
       - ./src:/var/www
     networks:
